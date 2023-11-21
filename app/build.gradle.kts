@@ -31,7 +31,7 @@ android {
                 )
             }
         create("obfuscated") {
-            initWith(buildTypes["debug"])
+            initWith(buildTypes["release"])
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
