@@ -11,12 +11,12 @@
 
     <TextView
         android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_gravity="center"
-    android:text="@string/name"
-    android:textColor="@color/black"
-    android:textSize="30sp"
-    android:textStyle="bold" />
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/name"
+        android:textColor="@color/black"
+        android:textSize="30sp"
+        android:textStyle="bold" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -29,8 +29,50 @@
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Space
+            android:layout_width="122dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+
+        <Button
+            android:id="@+id/button"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/pl_flag"
+            android:onClick="ChangePL"
+            android:text="@string/pol"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:backgroundTint="@null" />
+
+        <Space
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/button3"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:background="@drawable/uk_flag"
+            android:onClick="ChangeEN"
+            android:text="@string/en"
+            android:textColor="@android:color/black"
+            android:textSize="20sp"
+            app:backgroundTint="@null" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:gravity="center"
+        android:gravity="top"
         android:orientation="vertical">
 
         <EditText
@@ -38,9 +80,11 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:layout_marginBottom="10dp"
+            android:autofillHints="City"
             android:ems="10"
             android:hint="@string/city_enter"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorHint="#ECEFF1" />
 
         <EditText
             android:id="@+id/etCountry"
@@ -49,7 +93,9 @@
             android:layout_marginBottom="10dp"
             android:ems="10"
             android:hint="@string/country_enter"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:textColorHint="#ECEFF1"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/btnGet"
@@ -83,4 +129,5 @@
                 android:layout_height="wrap_content" />
         </ScrollView>
     </LinearLayout>
+
 </LinearLayout>

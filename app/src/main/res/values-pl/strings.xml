@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="city_enter">Wpisz nazwę miasta</string>
+    <string name="country_enter">Wpisz kod kraju</string>
+    <string name="search">Szukaj</string>
+    <string name="locate">Zlokalizuj</string>
+    <string name="city_empty">Nazwa kraju nie może być pusta</string>
+    <string name="loading">Wczytywanie</string>
+    <string name="permission">Przyznaj pozwolenie i odśwież</string>
+    <string name="Current_weather">Pogoda dla \t</string>
+    <string name="Temp">\n Temperatura: \t</string>
+    <string name="Feels_Like">\n Odczuwalna: \t</string>
+    <string name="Humidity">\n Wilgotność: \t</string>
+    <string name="Description">\n Opis: \t</string>
+    <string name="Wind">\n Prędkość wiatru: \t</string>
+    <string name="Cloudiness">\n Zachmurzenie: \t</string>
+    <string name="Pressure">\n Ciśnienie: \t</string>
+</resources>

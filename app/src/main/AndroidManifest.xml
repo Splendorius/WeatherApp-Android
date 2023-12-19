@@ -19,6 +19,8 @@
         android:theme="@style/Theme.Weather_app"
         tools:targetApi="31">
         <activity
+            android:configChanges="locale|orientation"
+            android:windowSoftInputMode="adjustPan"
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"

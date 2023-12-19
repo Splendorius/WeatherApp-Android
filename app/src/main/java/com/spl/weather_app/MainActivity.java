@@ -1,9 +1,13 @@
-package com.example.weather_app;
+package com.spl.weather_app;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -26,6 +30,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.text.DecimalFormat;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
@@ -46,6 +51,30 @@ public class MainActivity extends AppCompatActivity {
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
     }
 
+    public void ChangePL(View view){
+        Locale myLocale = new Locale("pl");
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(myLocale);
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(this, MainActivity.class);
+        finish();
+        startActivity(refresh);
+    }
+
+    public void ChangeEN(View view){
+        Locale myLocale = new Locale("default");
+        Resources res = getResources();
+        DisplayMetrics dm = res.getDisplayMetrics();
+        Configuration conf = res.getConfiguration();
+        conf.setLocale(myLocale);
+        res.updateConfiguration(conf, dm);
+        Intent refresh = new Intent(this, MainActivity.class);
+        finish();
+        startActivity(refresh);
+    }
+
     public void getWeatherDetails(View view) {
         String tempUrl;
         String city = etCity.getText().toString().trim();
@@ -57,6 +86,10 @@ public class MainActivity extends AppCompatActivity {
                 tempUrl = url + "?q=" + city + "," + country + "&appid=" + appid;
             } else {
                 tempUrl = url + "?q=" + city + "&appid=" + appid;
+            }
+            if(getResources().getConfiguration().getLocales().get(0).equals(new Locale("pl")))
+            {
+                tempUrl += "&lang=pl";
             }
             StringRequest stringRequest = new StringRequest(Request.Method.POST, tempUrl, response -> {
                 String output = "";
@@ -78,14 +111,14 @@ public class MainActivity extends AppCompatActivity {
                     String countryName = jsonObjectSys.getString("country");
                     String cityName = jsonResponse.getString("name");
                     tvResult.setTextColor(Color.rgb(0, 0, 0));
-                    output += "Current weather of " + cityName + " (" + countryName + ")"
-                            + "\n Temp: " + df.format(temp) + " °C"
-                            + "\n Feels Like: " + df.format(feelsLike) + " °C"
-                            + "\n Humidity: " + humidity + "%"
-                            + "\n Description: " + description
-                            + "\n Wind Speed: " + wind + "m/s (meters per second)"
-                            + "\n Cloudiness: " + clouds + "%"
-                            + "\n Pressure: " + pressure + " hPa";
+                    output += getString(R.string.Current_weather) +" "+ cityName + " (" + countryName + ")"
+                            + getString(R.string.Temp) + df.format(temp) + " °C"
+                            + getString(R.string.Feels_Like) + df.format(feelsLike) + " °C"
+                            + getString(R.string.Humidity) + humidity + "%"
+                            + getString(R.string.Description) + description
+                            + getString(R.string.Wind) + wind + "m/s "
+                            + getString(R.string.Cloudiness) + clouds + "%"
+                            + getString(R.string.Pressure) + pressure + " hPa";
                     tvResult.setText(output);
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -100,7 +133,8 @@ public class MainActivity extends AppCompatActivity {
 
         tvResult.setText(R.string.loading);
 
-        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{
                     Manifest.permission.ACCESS_FINE_LOCATION
             }, 100);
@@ -116,6 +150,10 @@ public class MainActivity extends AppCompatActivity {
                 String longitude = String.valueOf(location.getLongitude());
                 String latitude = String.valueOf(location.getLatitude());
                 tempUrl = url + "?lat=" + latitude + "&lon=" + longitude + "&appid=" + appid;
+                if(getResources().getConfiguration().getLocales().get(0).equals(new Locale("pl")))
+                {
+                    tempUrl += "&lang=pl";
+                }
                 StringRequest stringRequest = new StringRequest(Request.Method.POST, tempUrl, response -> {
                     String output = "";
                     try {
@@ -136,14 +174,14 @@ public class MainActivity extends AppCompatActivity {
                         String countryName = jsonObjectSys.getString("country");
                         String cityName = jsonResponse.getString("name");
                         tvResult.setTextColor(Color.rgb(0, 0, 0));
-                        output += "Current weather of " + cityName + " (" + countryName + ")"
-                                + "\n Temp: " + df.format(temp) + " °C"
-                                + "\n Feels Like: " + df.format(feelsLike) + " °C"
-                                + "\n Humidity: " + humidity + "%"
-                                + "\n Description: " + description
-                                + "\n Wind Speed: " + wind + "m/s (meters per second)"
-                                + "\n Cloudiness: " + clouds + "%"
-                                + "\n Pressure: " + pressure + " hPa";
+                        output += getString(R.string.Current_weather) +" "+ cityName + " (" + countryName + ")"
+                                + getString(R.string.Temp) + df.format(temp) + " °C"
+                                + getString(R.string.Feels_Like) + df.format(feelsLike) + " °C"
+                                + getString(R.string.Humidity) + humidity + "%"
+                                + getString(R.string.Description) + description
+                                + getString(R.string.Wind) + wind + "m/s"
+                                + getString(R.string.Cloudiness) + clouds + "%"
+                                + getString(R.string.Pressure) + pressure + " hPa";
                         tvResult.setText(output);
                     } catch (JSONException e) {
                         e.printStackTrace();

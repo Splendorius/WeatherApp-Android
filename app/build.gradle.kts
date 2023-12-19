@@ -3,16 +3,15 @@ plugins {
 }
 
 android {
-    namespace = "com.example.weather_app"
+    namespace = "com.spl.weather_app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.weather_app"
+        applicationId = "com.spl.weather_app"
         minSdk = 24
         targetSdk = 33
         versionCode = 1
         versionName = "1.0"
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -24,7 +23,7 @@ android {
                 "proguard-rules.pro"
             )}
             debug {
-                isMinifyEnabled = false
+                isMinifyEnabled = true
                 proguardFiles(
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
@@ -32,11 +31,13 @@ android {
             }
         create("obfuscated") {
             initWith(buildTypes["release"])
+            isDebuggable = false
             isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("debug")
         }
         }
     compileOptions {

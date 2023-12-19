@@ -1,9 +1,5 @@
 <resources>
-    <string name="app_name">Weather_app</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name" translatable="false">Weather_app</string>
 
     <string name="city_enter">Enter City Name</string>
     <string name="country_enter">"Enter Country Code (Optional)"</string>
@@ -11,12 +7,25 @@
     <string name="search">"Search"</string>
     <string name="locate">"Locate me"</string>
 
-    <string name="name">Piotr Katolik</string>
-    <string name="album">162100</string>
+    <string name="name" translatable="false">Piotr Katolik</string>
+    <string name="album" translatable="false">162100</string>
 
 
     <string name="city_empty">City field can not be empty!</string>
     <string name="loading">Loading, please wait!</string>
     <string name="permission">Give permissions and refresh result</string>
+
+    <string name="Current_weather">Current weather of \t</string>
+    <string name="Temp">\n Temp: \t</string>
+    <string name="Feels_Like">\n Feels Like: \t</string>
+
+    <string name="Humidity">\n Humidity \t</string>
+    <string name="Description">\n description: \t</string>
+    <string name="Wind">\n Wind Speed: \t</string>
+    <string name="Cloudiness">\n Cloudiness: \t</string>
+    <string name="Pressure">\n Pressure: \t</string>
+    <string name="pol" translatable="false">POL</string>
+    <string name="en" translatable="false">EN</string>
+
 
 </resources>
