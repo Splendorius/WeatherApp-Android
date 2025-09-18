@@ -1,4 +1,4 @@
-# WeatherApp
+# WeatherApp-Android
 
 A simple **Android weather forecast application** that allows users to check the current weather for any city.  
 Built with **Java** and **Gradle**, using a public weather API.
