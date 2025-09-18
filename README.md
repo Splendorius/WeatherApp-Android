@@ -29,7 +29,7 @@ Built with **Java** and **Gradle**, using a public weather API.
 | Language | Java |
 | Platform | Android |
 | Build tool | Gradle |
-| API | (OpenWeatherMap) |
+| API | OpenWeatherMap |
 | IDE | Android Studio |
 
 ---
