@@ -52,6 +52,5 @@ private final String appid = "CHANGE_ME";
 5. If using OpenWeatherMap, place your API key in res/values/strings.xml or wherever the app expects it
 
 6. Build and run the app on an emulator or physical device
-```text
-Minimum SDK: 21 (Android 5.0 Lollipop), Target SDK: 33 (Android 13)
-```
+
+<ul><li>Minimum SDK: 21 (Android 5.0 Lollipop)</li><li>Target SDK: 33 (Android 13)</li></ul>
