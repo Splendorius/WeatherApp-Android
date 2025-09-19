@@ -38,7 +38,7 @@ Built with **Java** and **Gradle**, using a public weather API.
 
 1. Clone the repository  
    ```bash
-   git clone https://github.com/Splendorius/Weather_app.git
+   git clone https://github.com/Splendorius/WeatherApp-Android.git
 
 2. Open the project in Android Studio
 
