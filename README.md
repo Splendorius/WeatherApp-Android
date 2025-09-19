@@ -43,10 +43,15 @@ Built with **Java** and **Gradle**, using a public weather API.
 2. Open the project in Android Studio
 
 3. Insert your weather API key
+weather_app/MainActivity.java
+```java
+private final String appid = "CHANGE_ME";
+```
 
-4. If using OpenWeatherMap, place your API key in res/values/strings.xml or wherever the app expects it
 
-5. Build and run the app on an emulator or physical device
+5. If using OpenWeatherMap, place your API key in res/values/strings.xml or wherever the app expects it
+
+6. Build and run the app on an emulator or physical device
 ```text
 Minimum SDK: 21 (Android 5.0 Lollipop), Target SDK: 33 (Android 13)
 ```
