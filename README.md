@@ -47,4 +47,6 @@ Built with **Java** and **Gradle**, using a public weather API.
 4. If using OpenWeatherMap, place your API key in res/values/strings.xml or wherever the app expects it
 
 5. Build and run the app on an emulator or physical device
+```text
 Minimum SDK: 21 (Android 5.0 Lollipop), Target SDK: 33 (Android 13)
+```
