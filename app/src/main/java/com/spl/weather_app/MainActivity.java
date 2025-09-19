@@ -34,7 +34,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
     private final String url = "https://api.openweathermap.org/data/2.5/weather";
-    private final String appid = "76a347c43c57798849c5dd1c4af0ceb8";
+    private final String appid = "CHANGE_ME";
     EditText etCity, etCountry;
     TextView tvResult;
     DecimalFormat df = new DecimalFormat("#.##");
